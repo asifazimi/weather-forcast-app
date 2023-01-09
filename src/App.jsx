@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import Search from "./components/search/search";
+import "./App.css";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const handleOnSearchChange = (searchData) => {
+    console.log(searchData);
+  };
 
   return (
-    <>
-      <p>
-        You clicked count to see <span>{count}</span> number.
-      </p>
-      <button onClick={() => setCount(count + 1)}>count</button>
-    </>
+    <div className="container">
+      <Search onSearchChange={handleOnSearchChange} />
+    </div>
   );
 };
 
